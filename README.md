@@ -1,4 +1,5 @@
 # React Promise State
+[![CircleCI](https://circleci.com/gh/traveloka/rps.svg?style=svg)](https://circleci.com/gh/traveloka/rps)
 
 Handling loading, error, and success callback of promise out of the box!
 

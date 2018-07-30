@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "marlint",
     "test": "jest",
-    "coverage": "nyc npm test && nyc report --reporter=html",
+    "test:coverage": "yarn test --coverage",
+    "test:ci": "yarn test:coverage -i --reporters jest-simple-dot-reporter jest-junit",
     "build": "npm run build:clean && npm run build:dist",
     "build:clean": "rimraf dist/*",
     "build:dist": "babel es6 --out-dir dist --copy-files --ignore *.test.js,__tests__",
@@ -29,6 +30,8 @@
     "eslint-plugin-jest": "^21.18.0",
     "jest": "^22.4.3",
     "jest-cli": "^22.4.3",
+    "jest-simple-dot-reporter": "^1.0.2",
+    "jest-junit": "^5.1.0",
     "marlint": "^6.5.4",
     "nyc": "^12.0.2",
     "react": "^16.3.1",

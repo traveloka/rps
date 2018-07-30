@@ -59,9 +59,12 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/rps
-      - run: yarn test
+      - run:
+          command: yarn test:ci
+          environment:
+            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
       - store_test_results:
-          path: ./packages/@traveloka/rps/coverage
+          path: reports/junit
 
   publish:
     <<: *job-defaults

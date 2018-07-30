@@ -57,7 +57,7 @@ jobs:
           at: ~/rps
       - run: yarn test
       - store_artifacts:
-          path: /packages/@traveloka/rps/coverage
+          path: ./packages/@traveloka/rps/coverage
           destination: coverage
 
   publish:

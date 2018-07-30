@@ -8,7 +8,7 @@
     "test": "lerna run test",
     "publish": "lerna publish --conventional-commits --yes --concurrency=1 --exact",
     "publish:git": "yarn run publish --skip-npm",
-    "publish:git": "yarn run publish --skip-git"
+    "publish:npm": "yarn run publish --skip-git"
   },
   "dependencies": {
     "lerna": "^2.11.0"

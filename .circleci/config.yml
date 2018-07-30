@@ -65,6 +65,9 @@ jobs:
             JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
       - store_test_results:
           path: ./packages/@traveloka/rps/reports/junit/
+      - store_artifacts:
+          path: ./packages/@traveloka/rps/coverage
+
 
   publish:
     <<: *job-defaults

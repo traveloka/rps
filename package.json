@@ -7,6 +7,7 @@
     "bootstrap": "lerna bootstrap",
     "test": "lerna run test",
     "test:ci": "lerna run test:ci",
+    "test:html": "lerna run test:html",
     "publish": "lerna publish --conventional-commits --yes --concurrency=1 --exact",
     "publish:git": "yarn run publish --skip-npm",
     "publish:npm": "yarn run publish --skip-git"

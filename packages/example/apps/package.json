@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@example/shared": "1.0.0",
-    "@traveloka/rps": "1.2.0",
+    "@traveloka/rps": "1.0.0",
     "concurrently": "^3.6.0",
     "haul": "^1.0.0-rc.5",
     "react": "16.3.1",

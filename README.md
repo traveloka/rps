@@ -28,3 +28,7 @@ react-native run-ios # open another terminal
 cd examples/web
 yarn start
 ````
+
+## Contributing
+
+See [CONTRIBUTING.md](docs/CONTRIBUTING.md)

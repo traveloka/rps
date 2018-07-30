@@ -60,9 +60,8 @@ jobs:
       - attach_workspace:
           at: ~/rps
       - run: yarn test
-      - store_artifacts:
+      - store_test_results:
           path: ./packages/@traveloka/rps/coverage
-          destination: coverage
 
   publish:
     <<: *job-defaults

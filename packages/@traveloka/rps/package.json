@@ -8,6 +8,7 @@
     "test": "jest",
     "test:coverage": "yarn test --coverage",
     "test:ci": "yarn test:coverage -i --reporters jest-simple-dot-reporter jest-junit",
+    "test:html": "nyc npm test && nyc report --reporter=html",
     "build": "npm run build:clean && npm run build:dist",
     "build:clean": "rimraf dist/*",
     "build:dist": "babel es6 --out-dir dist --copy-files --ignore *.test.js,__tests__",

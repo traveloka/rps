@@ -27,6 +27,8 @@ defaults:
       working_directory: ~/rps
       docker:
         - image: circleci/node:8.11.2-jessie
+
+version: 2
 jobs:
   setup:
     <<: *job-defaults

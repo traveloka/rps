@@ -1,0 +1,9 @@
+{
+  "lerna": "2.11.0",
+  "packages": [
+    "packages/@traveloka/rps",
+    "packages/example/*"
+  ],
+  "npmClient": "yarn",
+  "version": "1.0.0"
+}

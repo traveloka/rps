@@ -1,0 +1,84 @@
+version: 2
+aliases:
+  - &restore-monorepo-cache
+    keys:
+      - dependencies-{{ checksum "package.json" }}
+      - dependencies-
+
+  - &restore-packages-cache
+    keys:
+      - dependencies-packages-v1-{{ checksum "packages_checksum" }}
+      - dependencies-packages-v1-
+
+  - &save-monorepo-cache
+    paths:
+      - node_modules
+    key: dependencies-{{ checksum "package.json" }}
+
+  - &save-packages-cache
+    paths:
+      - packages/@traveloka/rps/node_modules
+      - packages/example/apps/node_modules
+      - packages/example/web/node_modules
+      - packages/example/shared/node_modules
+    key: dependencies-packages-v1-{{ checksum "packages_checksum" }}
+
+defaults:
+  - &job-defaults
+      working_directory: ~/rps
+      docker:
+        - image: circleci/node:8.11.2-jessie
+jobs:
+  setup:
+    <<: *job-defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/rps
+
+      - restore_cache: *restore-monorepo-cache
+      - restore_cache: *restore-packages-cache
+
+      - run: yarn install
+      - run: yarn bootstrap
+
+      - save_cache: *save-monorepo-cache
+      - save_cache: *save-packages-cache
+
+      - persist_to_workspace:
+          root: .
+          paths: .
+
+  test:
+    <<: *job-defaults
+    steps:
+      - attach_workspace:
+          at: ~/rps
+      - run: yarn test
+      - store_artifacts:
+          path: /packages/@traveloka/rps/coverage
+          destination: coverage
+
+  publish:
+    <<: *job-defaults
+    steps:
+      - attach_workspace:
+          at: ~/rps
+      - run: yarn run publish:npm
+workflows:
+  version: 2
+  default-workflow:
+    jobs:
+      - setup
+      - test:
+          requires:
+            - setup
+      - publish:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore:
+                - /*/
+            tags:
+              only: /^v.*/

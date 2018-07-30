@@ -69,6 +69,7 @@ jobs:
           command: yarn test:html
       - store_artifacts:
           path: ./packages/@traveloka/rps/rcoverage
+          destination: coverage
 
 
   publish:

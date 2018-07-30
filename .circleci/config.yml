@@ -38,7 +38,7 @@ jobs:
           at: ~/rps
 
       - run:
-          command: cat packages/*/package.json > packages_checksum
+          command: cat packages/*/*/package.json > packages_checksum
           name: Creating checksum file for packages/* packages
 
       - restore_cache: *restore-monorepo-cache

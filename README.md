@@ -182,6 +182,8 @@ Additional Props:
 |----------|------|---------------|--------------------------------------------------|
 | `result`   | any  |               | Value that being resolve by async function. |
 
+---
+
 #### Components
 
 ##### PageStateProvider
@@ -199,6 +201,7 @@ Additional Props:
 | `setPageState(path, {payload})` | func |               | Show given path, with pass the payload as property |
 | `resetPageState(path)`          | func |               | Reset given path                                   |
 | `reset()`                       | func |               | Reset all paths                                    |
+---
 
 #### HOCs
 

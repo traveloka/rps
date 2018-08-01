@@ -194,9 +194,22 @@ See in [COMPONENTS](docs/COMPONENTS.md)
 
 ##### withPageStateProvider
 
-+ `withPageStateProvider(stateConfig, advancedConfig)`
++ `withPageStateProvider(stateConfig)`
 
 `withPageStateProvider` HOC is a shortcut to wrap the React Component with `PageStateProvider`.
+
+Structure of `stateConfig`:
+```javascript
+{
+  [path: string]: [StateComponent: ReactElement]
+}
+```
+Example:
+```javascript
+{
+  loading: (props) => <div>Loading...</div>
+}
+```
 
 ##### pageState
 `pageState` HOC is being used in React Class Component and Class Method.

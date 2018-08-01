@@ -5,17 +5,14 @@ import pageStateMethod, { translatePayload } from '../pageStateMethod';
 describe('test translatePayload', () => {
   it('should give correct config by given string', () => {
     const [path, payload] = translatePayload('snackbar.loading');
-    expect(path).toEqual('snackbar');
-    expect(payload).toEqual({
-      type: 'loading',
-    });
+    expect(path).toEqual('snackbar.loading');
+    expect(payload).toBeTruthy();
   });
 
   it('should give correct config by given object', () => {
     const [path, payload] = translatePayload({ path: 'snackbar.loading', payload: { title: 'testing' } });
-    expect(path).toEqual('snackbar');
+    expect(path).toEqual('snackbar.loading');
     expect(payload).toEqual({
-      type: 'loading',
       payload: {
         title: 'testing',
       },
@@ -45,8 +42,8 @@ describe('test pageStateMethod', () => {
       };
       await obj.handleFetchUser();
       const [firstArg, secondArg] = mockSetPageState.mock.calls[0];
-      expect(firstArg).toEqual('page');
-      expect(secondArg.type).toEqual('loading');
+      expect(firstArg).toEqual('page.loading');
+      expect(secondArg).toBeTruthy();
       expect(mockResetPageState).toHaveBeenCalled();
     });
 
@@ -114,7 +111,7 @@ describe('test pageStateMethod', () => {
       resetPageState: mockSetPageState,
     };
     await obj.handleFetchUser();
-    expect(mockSetPageState).toHaveBeenCalledWith('page', { type: 'success', payload: { result: 42 } });
+    expect(mockSetPageState).toHaveBeenCalledWith('page.success', { payload: { result: 42 } });
   });
 
   it('should call setPageState for error config', async () => {
@@ -134,8 +131,7 @@ describe('test pageStateMethod', () => {
     await obj.handleFetchUser();
     expect(mockResetPageState).toHaveBeenCalled();
     const [firstArg, secondArg] = mockSetPageState.mock.calls[0];
-    expect(firstArg).toEqual('page');
-    expect(secondArg.type).toEqual('error');
+    expect(firstArg).toEqual('page.error');
     expect(secondArg.payload).toHaveProperty('error', 'ini error message');
   });
 

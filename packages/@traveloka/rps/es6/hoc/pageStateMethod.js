@@ -18,13 +18,9 @@ export function mergePayload(path, payload = {}, mergedPayload) {
 
 export function translatePayload(config) {
   if (typeof config === 'string') {
-    const paths = config.split('.');
-    const type = paths.pop();
     return [
-      paths.join(''),
-      {
-        type
-      }
+      config,
+      {}
     ];
   }
   const [path, payload] = translatePayload(config.path);

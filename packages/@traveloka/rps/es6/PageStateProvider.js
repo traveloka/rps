@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
 
 import get from 'lodash/get';
+import flatten from 'flat';
 
 import Handler from './Handler';
 
@@ -55,9 +55,15 @@ export default class PageStateProvider extends Component {
   };
 
   reset = () => {
-    const { config } = this.props;
-    Object.keys(config).forEach(path => this.setPageState(path));
+    const config = this.getConfig();
+    Object.keys(config).forEach(key => this.setPageState(key));
   };
+
+  getConfig = () => {
+    const { config } = this.props;
+    const flattenConfig = flatten(config);
+    return flattenConfig;
+  }
 
   getContext() {
     return {
@@ -68,15 +74,18 @@ export default class PageStateProvider extends Component {
   }
 
   render() {
-    const { config } = this.props;
+    const config = this.getConfig();
     return (
       <Provider value={this.getContext()}>
-        <View style={{ flex: 1 }}>
+        <React.Fragment>
           {this.state.isRenderChildren && this.props.children}
-          {Object.keys(config).map(configName => (
-            <Handler key={`handler-${configName}`} config={config[configName]} {...get(this.state, configName)} />
-          ))}
-        </View>
+          {Object.keys(config).map(configName => {
+            if (get(this.state, configName)) {
+              return <Handler key={`handler-${configName}`} component={get(config, configName)} {...get(this.state, configName)} />
+            }
+            return null;
+          })}
+        </React.Fragment>
       </Provider>
     );
   }

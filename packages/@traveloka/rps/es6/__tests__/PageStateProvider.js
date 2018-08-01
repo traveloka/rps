@@ -38,9 +38,7 @@ describe('test PageStateProvider', () => {
     ).root;
     const testInstance = testRoot.instance;
     testInstance.setState({
-      snackbar: {
-        type: 'loading',
-      },
+      ['snackbar.loading']: {},
     });
     expect(testRoot.findByType(SnackbarLoading)).toBeTruthy();
     expect(() => testRoot.findByType(SnackbarError)).toThrow();

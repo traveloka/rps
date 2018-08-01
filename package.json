@@ -13,6 +13,7 @@
     "publish:npm": "yarn run publish"
   },
   "dependencies": {
+    "flat": "^4.1.0",
     "lerna": "^3.0.0-rc.0"
   },
   "config": {

@@ -1,0 +1,26 @@
+{
+  "name": "@example/shared",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "test": "lerna run test",
+    "test:ci": "lerna run test:ci",
+    "test:html": "lerna run test:html",
+    "publish": "cd packages/@traveloka/rps && npm publish",
+    "publish:git": "lerna publish --skip-npm",
+    "publish:npm": "yarn run publish"
+  },
+  "dependencies": {
+    "lerna": "^3.0.0-rc.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  }
+}

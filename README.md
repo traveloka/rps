@@ -156,6 +156,7 @@ componentDidMount() {
 - `loading` have order **before** async function is executed.
 
 Additional Props:
+
 | Property   | Type   | Default Value | Description                            |
 |------------|--------|---------------|----------------------------------------|
 | `cancel`     | `func`   |               | To cancel the function execution. `NOTE! Still on experiment.`            |
@@ -165,6 +166,7 @@ Additional Props:
 - `error` will be execute, if the async function throw an error exception.
 
 Additional Props:
+
 | Property | Type   | Default Value | Description                                                                                                  |
 |----------|--------|---------------|--------------------------------------------------------------------------------------------------------------|
 | `error`    | `object` |               | An error object that being throw in async function                                                           |
@@ -175,6 +177,7 @@ Additional Props:
 - `success` will be execute, if the async function not throw an error exception.
 
 Additional Props:
+
 | Property | Type | Default Value | Description                                      |
 |----------|------|---------------|--------------------------------------------------|
 | `result`   | any  |               | Value that being resolve by async function. |
@@ -183,12 +186,14 @@ Additional Props:
 
 ##### PageStateProvider
 `PageStateProvider` must provided to show the according Element Component. The Element Component would be place sibling with the children of `PageStateProvider`.
+
 | Property | Type   | Default Value | Description                             |
 |----------|--------|---------------|-----------------------------------------|
 | `config`   | `object` |               | key as path, value as Element Component |
 
 ##### PageStateConsumer
 `PageStateConsumer` give functions to show / reset the path component.
+
 | Property                      | Type | Default Value | Description                                        |
 |-------------------------------|------|---------------|----------------------------------------------------|
 | `setPageState(path, {payload})` | func |               | Show given path, with pass the payload as property |

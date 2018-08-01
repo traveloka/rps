@@ -283,7 +283,7 @@ Example:
 export default function Loading({title}) {
   return (<div>{title}</div>)
 }
-----------
+// ----------
 
 // Container.js
 import {
@@ -295,7 +295,7 @@ import Loading from './Loading';
 @withPageStateProvider({
   loading: Loading
 })
-@pageState
+@pageState()
 export default class Container extends React.Component {
 
   @pageState({

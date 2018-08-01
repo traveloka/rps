@@ -15,7 +15,7 @@ Handling loading, error, and success callback of promise out of the box!
   - [How to use](#how-to-use)
       - [Setup](#setup)
   - [Documentations](#documentations)
-      - [Elements](#elements)
+      - [States](#states)
         - [loading](#loading)
         - [error](#error)
         - [Success](#success)
@@ -25,10 +25,10 @@ Handling loading, error, and success callback of promise out of the box!
       - [HOCs](#hocs)
         - [withPageStateProvider](#withpagestateprovider)
         - [pageState](#pagestate)
-  - [Example](#example)
+  - [Project Example](#project-example)
       - [App](#app)
       - [Web](#web)
-  - [Pass additional property to element component](#pass-additional-property-to-element-component)
+  - [Pass additional property to StateComponent](#pass-additional-property-to-statecomponent)
   - [How to (not) use decorators](#how-to-not-use-decorators)
   - [Babel: manually enabling decorators](#babel-manually-enabling-decorators)
   - [Contributing](#contributing)
@@ -136,15 +136,18 @@ export default compose(
 
 ## Documentations
 
-#### Elements
-There are 3 core elements: `loading`, `error` and `success`. Each element have it's own order of execution and additional props.
+#### States
+There are 3 core States: `loading`, `error` and `success`. Each State have it's own order of execution and additional props.
 
-Element is being used in [`@pageState`](#pagestate) decorator in class method. It used to show such element in according element order. ex: you want to show Full Loading Page, before function being executed, you should use `loading` element.
+State is being used in [`@pageState`](#pagestate) decorator in class method. It is used to show such event in according order. ex: you want to show Full Loading Page, before function being executed, you should use `loading` State.
 
 Structure:
 ```javascript
+@withPageStateComponent({
+  [path]: [StateComponent] // declaration of all available path
+})
 @pageState({
-  [element]: [path]
+  [state]: [path] // state must be one of [loading, error, success]
 })
 componentDidMount() {
   // ...
@@ -187,11 +190,11 @@ Additional Props:
 #### Components
 
 ##### PageStateProvider
-`PageStateProvider` must provided to show the according Element Component. The Element Component would be place sibling with the children of `PageStateProvider`.
+`PageStateProvider` must provided to show the according StateComponent. The StateComponent would be placed as sibling with the children of `PageStateProvider`.
 
 | Property | Type   | Default Value | Description                             |
 |----------|--------|---------------|-----------------------------------------|
-| `config`   | `object` |               | key as path, value as Element Component |
+| `config`   | `object` |               | key as path, value as StateComponent |
 
 ##### PageStateConsumer
 `PageStateConsumer` give functions to show / reset the path component.
@@ -207,21 +210,21 @@ Additional Props:
 
 ##### withPageStateProvider
 
-+ `withPageStateProvider(elementConfig, advancedConfig)`
++ `withPageStateProvider(stateConfig, advancedConfig)`
 
 `withPageStateProvider` HOC is a shortcut to wrap the React Component with `PageStateProvider`.
 
 ##### pageState
 `pageState` HOC is being used in React Class Component and Class Method.
 1. `pageState` as HOC in React Class Component, is a shortcut to wrap the React Component with `PageStateConsumer`.
-2. `pageState` as HOC in Class Method, this trigger the element to being show before / after the method being executed.
-   + `pageState(config, advancedConfig)`.
-      + `config`, there are 2 structure that could being pass in config.
+2. `pageState` as HOC in Class Method, this trigger the state to being show before / after the method being executed.
+   + `pageState(config)`.
+      + `config`, there are 2 structures that could being pass in config.
         1. Basic.
            structure:
            ```javascript
            @pageState({
-             [element: (loading|error|success)]: [path: string]
+             [state: (loading|error|success)]: [path: string]
            })
            ```
            example:
@@ -230,11 +233,11 @@ Additional Props:
              loading: 'page.loading'
            })
            ```
-        2. Advanced, giving flexibility to pass additional property to element component.
+        2. Customizeable, giving flexibility to pass additional property to state component.
            structure:
            ```javascript
            @pageState({
-             [element: (loading|error|success)]: {
+             [state: (loading|error|success)]: {
                path: [path: string],
                payload: [additional_property: object]
              }
@@ -251,9 +254,8 @@ Additional Props:
              }
            })
            ```
-      + `advancedConfig`, // @TODO
 
-## Example
+## Project Example
 ````bash
 yarn
 yarn bootstrap
@@ -271,9 +273,40 @@ react-native run-ios # open another terminal
 cd examples/web
 yarn start
 ````
-## Pass additional property to element component
-// @TODO
+## Pass additional property to StateComponent
+To have flexibility passing additional property to StateComponent, in `pageState` HOC in Class Method, you must pass StateComponent.
+Example:
+```javascript
+// Loading.js
+export default function Loading({title}) {
+  return (<div>{title}</div>)
+}
+----------
 
+// Container.js
+import {
+  withPageStateProvider,
+  pageState
+} from '@traveloka/rps';
+import Loading from './Loading';
+
+@withPageStateProvider({
+  loading: Loading
+})
+@pageState
+export default class Container extends React.Component {
+
+  @pageState({
+    path: 'loading',
+    payload: {
+      title: 'Please wait...',
+    }
+  })
+  componentDidMount() {
+    //...
+  }
+}
+```
 
 ## How to (not) use decorators
 

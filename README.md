@@ -207,7 +207,12 @@ Structure of `stateConfig`:
 Example:
 ```javascript
 {
-  loading: (props) => <div>Loading...</div>
+  pageLoading: (props) => <div>Loading...</div>,
+  pageError: (props) => <div>Error...</div>
+  snackbar: { // path could be nested object.
+    success: (props) => <SnackbarAutoClose type="success" message={props.result} />, // to use, path should be "snackbar.success"
+    error: (props) => <SnackbarAutoClose type="error" action={props.retry} />
+  }
 }
 ```
 

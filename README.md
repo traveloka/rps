@@ -137,6 +137,9 @@ export default compose(
 #### States
 There are 3 core States: `loading`, `error` and `success`. Each State have it's own order of execution and additional props.
 
+> **NOTE!**
+> React Class Component must be wrapped with `pageState` HOC to be able using HOC in Class Method.
+
 State is being used in [`@pageState`](#pagestate) decorator in class method. It is used to show such event in according order. ex: you want to show Full Loading Page, before function being executed, you should use `loading` State.
 
 Structure:
@@ -276,7 +279,7 @@ cd examples/web
 yarn start
 ````
 ## Pass additional property to StateComponent
-To have flexibility passing additional property to StateComponent, in `pageState` HOC in Class Method, you must pass StateComponent.
+To pass additional property to StateComponent, in `pageState` HOC in Class Method, you must pass `payload` object.
 Example:
 ```javascript
 // Loading.js

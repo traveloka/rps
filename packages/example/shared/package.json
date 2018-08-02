@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@traveloka/rps": "1.0.0",
+    "@traveloka/rps": "1.1.0",
     "faker": "^4.1.0",
     "react-native-snackbar-component": "^1.0.8",
     "react-native-web-modal": "^1.0.1",

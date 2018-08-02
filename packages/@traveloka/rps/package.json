@@ -1,6 +1,6 @@
 {
   "name": "@traveloka/rps",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "react promise state management, loading, error, and success callback.",
   "main": "dist/index.js",
   "scripts": {

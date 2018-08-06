@@ -1,5 +1,5 @@
 {
-  "name": "@example/shared",
+  "name": "rps",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -13,7 +13,6 @@
     "publish:npm": "npm run publish"
   },
   "dependencies": {
-    "flat": "^4.1.0",
     "lerna": "^3.0.0-rc.0"
   },
   "config": {

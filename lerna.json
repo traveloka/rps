@@ -4,5 +4,6 @@
     "packages/example/*"
   ],
   "npmClient": "yarn",
-  "version": "1.1.1"
+  "version": "1.1.1",
+  "lerna": "3.0.0-rc.0"
 }

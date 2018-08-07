@@ -8,7 +8,6 @@
     "@traveloka/rps": "^1.1.1",
     "faker": "^4.1.0",
     "react-native-snackbar-component": "^1.0.8",
-    "react-native-web-modal": "^1.0.1",
     "react-navigation": "^1.5.8"
   },
   "peerDependencies": {

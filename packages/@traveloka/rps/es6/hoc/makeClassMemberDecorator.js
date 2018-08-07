@@ -1,5 +1,3 @@
-require('core-js/es6/reflect');
-
 /**
  * inspired by : https://github.com/NYTimes/react-tracking
  *
@@ -10,7 +8,7 @@ require('core-js/es6/reflect');
  * Example:
  *   decoratedFn => function () {
  *     // do stuff...
- *     return Reflect.apply(decoratedFn, this, arguments);
+ *     return Object.apply(decoratedFn, this, arguments);
  *   }
  * @returns {Function} Class member decorator ((target, name, descriptor) => newDescriptor)
  */
@@ -37,10 +35,10 @@ export default function makeClassMemberDecorator(decorate) {
             return null;
           }
 
-          const resolvedValue = initializer ? Reflect.apply(initializer, this, []) : Reflect.apply(get, this, []);
+          const resolvedValue = initializer ? initializer.apply(this, []) : get.apply(this, []);
           const decoratedValue = decorate(resolvedValue).bind(this);
 
-          Reflect.defineProperty(this, name, {
+          Object.defineProperty(this, name, {
             configurable,
             enumerable,
             value: decoratedValue

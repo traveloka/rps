@@ -1,5 +1,3 @@
-require('core-js/es6/reflect');
-
 /* eslint-disable babel/no-invalid-this, prefer-rest-params */
 
 import makeClassMemberDecorator from './makeClassMemberDecorator';
@@ -45,7 +43,7 @@ export default function pageStateMethod(config = {}, { callback } = {}) {
 
           const promiseFn = new Promise((resolve, reject) => {
             const fn = () => {
-              const fnResult = Reflect.apply(decoratedFn, this, arguments);
+              const fnResult = decoratedFn.apply(this, arguments);
               if (fnResult && fnResult.then) fnResult.then(resolve).catch(reject);
               else {
                 resolve(fnResult);
@@ -89,7 +87,7 @@ export default function pageStateMethod(config = {}, { callback } = {}) {
                 this.props.setPageState(
                   ...mergePayload(...args, {
                     error: e,
-                    retry: () => Reflect.apply(retryFn, this, arguments),
+                    retry: () => retryFn.apply(this, arguments),
                   })
                 );
               });

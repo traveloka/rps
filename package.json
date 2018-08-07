@@ -9,7 +9,7 @@
     "test:ci": "lerna run test:ci",
     "test:html": "lerna run test:html",
     "publish": "cd packages/@traveloka/rps && npm publish",
-    "publish:git": "lerna publish --skip-npm",
+    "publish:git": "lerna publish --conventional-commits --yes --skip-npm",
     "publish:npm": "npm run publish"
   },
   "dependencies": {

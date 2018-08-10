@@ -1,5 +1,5 @@
 # React Page State
-[![CircleCI](https://circleci.com/gh/traveloka/rps.svg?style=svg)](https://circleci.com/gh/traveloka/rps)
+[![CircleCI](https://circleci.com/gh/traveloka/rps/tree/master.svg?style=shield&circle-token=58aca08707c8f3795ed9aafb9776fa71042fada6)](https://circleci.com/gh/traveloka/rps)
 
 Handling loading, error, and success callback of promise out of the box!
 

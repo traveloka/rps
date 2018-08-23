@@ -1,5 +1,6 @@
 {
   "eslint.workingDirectories": [
     "./packages/@traveloka/rps"
-  ]
+  ],
+  "editor.formatOnSave": true
 }

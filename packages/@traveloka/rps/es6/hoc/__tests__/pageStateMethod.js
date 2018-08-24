@@ -242,4 +242,86 @@ describe('test pageStateMethod', () => {
     expect(mockFetchUserWithReturn.mock.calls.length).toEqual(1);
     expect(callbackFn.mock.calls.length).toEqual(1);
   });
+
+
+  it('should accept payload as object', async () => {
+    const mockSetPageState = jest.fn();
+    const mockResetPageState = jest.fn();
+    const mockFetchUserWithReturn = jest.fn(args => args);
+    mockFetchUserWithReturn.mockReturnValueOnce(new Promise(resolve => resolve(42)));
+    class TestClass {
+      @pageStateMethod({ success: {
+        path: 'page.success',
+        payload: {
+          message: 'Hello World',
+        }
+      }})
+      handleFetchUser = payload => mockFetchUserWithReturn(payload);
+    }
+    const obj = new TestClass();
+    obj.props = {
+      setPageState: mockSetPageState,
+      resetPageState: mockResetPageState,
+    };
+    await obj.handleFetchUser(10);
+    expect(mockFetchUserWithReturn.mock.calls.length).toEqual(1);
+    const [_, secondArg] = mockSetPageState.mock.calls[0];
+    expect(secondArg.payload.message).toEqual('Hello World');
+  });
+
+  it('should accept payload as function', async () => {
+    const mockSetPageState = jest.fn();
+    const mockResetPageState = jest.fn();
+    const mockFetchUserWithReturn = jest.fn(args => args);
+    mockFetchUserWithReturn.mockReturnValueOnce(new Promise(resolve => resolve(42)));
+    let counter = 1;
+    class TestClass {
+      @pageStateMethod({ success: {
+        path: 'page.success',
+        payload: () => ({
+          message: counter++,
+        })
+      }})
+      handleFetchUser = payload => mockFetchUserWithReturn(payload);
+    }
+    const obj = new TestClass();
+    obj.props = {
+      setPageState: mockSetPageState,
+      resetPageState: mockResetPageState,
+    };
+    await obj.handleFetchUser(10);
+    expect(mockFetchUserWithReturn.mock.calls.length).toEqual(1);
+    const [_1, secondArg1] = mockSetPageState.mock.calls[0];
+    expect(secondArg1.payload.message).toEqual(1);
+    await obj.handleFetchUser(10);
+    const [_2, secondArg2] = mockSetPageState.mock.calls[1];
+    expect(secondArg2.payload.message).toEqual(2);
+  });
+
+
+  it('should accept props in payload as function', async () => {
+    const mockSetPageState = jest.fn();
+    const mockResetPageState = jest.fn();
+    const mockFetchUserWithReturn = jest.fn(args => args);
+    mockFetchUserWithReturn.mockReturnValueOnce(new Promise(resolve => resolve(42)));
+    class TestClass {
+      @pageStateMethod({ success: {
+        path: 'page.success',
+        payload: (props) => ({
+          message: props.message,
+        })
+      }})
+      handleFetchUser = payload => mockFetchUserWithReturn(payload);
+    }
+    const obj = new TestClass();
+    obj.props = {
+      setPageState: mockSetPageState,
+      resetPageState: mockResetPageState,
+      message: 'Hello World'
+    };
+    await obj.handleFetchUser(10);
+    expect(mockFetchUserWithReturn.mock.calls.length).toEqual(1);
+    const [_, secondArg] = mockSetPageState.mock.calls[0];
+    expect(secondArg.payload.message).toEqual('Hello World');
+  });
 });

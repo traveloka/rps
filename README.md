@@ -161,9 +161,9 @@ componentDidMount() {
 
 Additional Props:
 
-| Property   | Type   | Default Value | Description                            |
-|------------|--------|---------------|----------------------------------------|
-| `cancel`     | `func`   |               | To cancel the function execution. `NOTE! Still on experiment.`            |
+| Property | Type   | Default Value | Description                                                    |
+| -------- | ------ | ------------- | -------------------------------------------------------------- |
+| `cancel` | `func` |               | To cancel the function execution. `NOTE! Still on experiment.` |
 
 ##### error
 - `error` have order **after** async function is executed.
@@ -171,10 +171,10 @@ Additional Props:
 
 Additional Props:
 
-| Property | Type   | Default Value | Description                                                                                                  |
-|----------|--------|---------------|--------------------------------------------------------------------------------------------------------------|
-| `error`    | `object` |               | An error object that being throw in async function                                                           |
-| `retry`    | `func`   |               | Function that would execute async function. Function that being executed will have same parameter as before. |
+| Property | Type     | Default Value | Description                                                                                                  |
+| -------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
+| `error`  | `object` |               | An error object that being throw in async function                                                           |
+| `retry`  | `func`   |               | Function that would execute async function. Function that being executed will have same parameter as before. |
 
 ##### Success
 - `success` have order **after** async function is executed.
@@ -182,9 +182,9 @@ Additional Props:
 
 Additional Props:
 
-| Property | Type | Default Value | Description                                      |
-|----------|------|---------------|--------------------------------------------------|
-| `result`   | any  |               | Value that being resolve by async function. |
+| Property | Type | Default Value | Description                                 |
+| -------- | ---- | ------------- | ------------------------------------------- |
+| `result` | any  |               | Value that being resolve by async function. |
 
 ---
 
@@ -227,9 +227,9 @@ Example:
       + `config`, there are 2 structures that could being pass in config.
         1. Basic.
            structure:
-           ```javascript
+           ```typescript
            @pageState({
-             [state: (loading|error|success)]: [path: string]
+             [state: "loading"|"error"|"success"]: [path: string]
            })
            ```
            example:
@@ -240,9 +240,9 @@ Example:
            ```
         2. Customizeable, giving flexibility to pass additional property to state component.
            structure:
-           ```javascript
+           ```typescript
            @pageState({
-             [state: (loading|error|success)]: {
+             [state: "loading"|"error"|"success"]: {
                path: [path: string],
                payload: [additional_property: object]
              }

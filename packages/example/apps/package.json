@@ -4,9 +4,9 @@
   "private": true,
   "devDependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
-    "jest": "^23.4.1",
+    "jest": "^23.6.0",
     "jest-react-native": "^18.0.0",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "16.5.2"
   },
   "scripts": {
     "start": "rm -rf node_modules/@traveloka/rps/node_modules/react-native && concurrently \"wml-symlink start\" \"react-native start\"",
@@ -21,10 +21,10 @@
   "dependencies": {
     "@example/shared": "^1.2.0",
     "@traveloka/rps": "^1.2.0",
-    "concurrently": "^3.6.0",
+    "concurrently": "^4.0.1",
     "haul": "^1.0.0-rc.5",
-    "react": "16.3.1",
-    "react-native": "~0.55.2",
+    "react": "16.5.2",
+    "react-native": "~0.57.1",
     "wml-symlink": "^0.0.3"
   }
 }

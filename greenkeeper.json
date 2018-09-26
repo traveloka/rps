@@ -1,0 +1,13 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/@traveloka/rps/package.json",
+        "packages/example/apps/package.json",
+        "packages/example/shared/package.json",
+        "packages/example/web/package.json"
+      ]
+    }
+  }
+}

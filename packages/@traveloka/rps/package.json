@@ -17,7 +17,7 @@
   "dependencies": {
     "create-react-context": "^0.2.2",
     "flat": "^4.1.0",
-    "hoist-non-react-statics": "^2.0.0",
+    "hoist-non-react-statics": "^3.0.1",
     "lodash": "^4.17.5"
   },
   "peerDependencies": {
@@ -26,18 +26,18 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-jest": "^22.4.3",
+    "babel-jest": "^23.6.0",
     "babel-preset-react-native-stage-0": "^1.0.1",
     "eslint-plugin-jest": "^21.18.0",
-    "jest": "^22.4.3",
-    "jest-cli": "^22.4.3",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
     "jest-junit": "^5.1.0",
     "jest-simple-dot-reporter": "^1.0.2",
     "marlint": "^6.5.4",
-    "nyc": "^12.0.2",
+    "nyc": "^13.0.1",
     "react": "^16.3.1",
-    "react-native": "~0.55.2",
-    "react-test-renderer": "^16.3.2"
+    "react-native": "~0.57.1",
+    "react-test-renderer": "16.5.2"
   },
   "repository": {
     "type": "git",

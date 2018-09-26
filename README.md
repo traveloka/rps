@@ -1,5 +1,5 @@
 # React Page State
-[![CircleCI](https://circleci.com/gh/traveloka/rps/tree/master.svg?style=shield&circle-token=58aca08707c8f3795ed9aafb9776fa71042fada6)](https://circleci.com/gh/traveloka/rps)
+[![CircleCI](https://circleci.com/gh/traveloka/rps/tree/master.svg?style=shield&circle-token=58aca08707c8f3795ed9aafb9776fa71042fada6)](https://circleci.com/gh/traveloka/rps) [![Greenkeeper badge](https://badges.greenkeeper.io/traveloka/rps.svg)](https://greenkeeper.io/)
 
 Handling loading, error, and success callback of promise out of the box!
 

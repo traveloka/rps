@@ -5,7 +5,9 @@ import merge from 'lodash/merge';
 import has from 'lodash/has';
 import isEmpty from 'lodash/isEmpty';
 
-export function mergePayload(path, payload = {}, mergedPayload) {
+export function mergePayload(path, _payload = {}, _mergedPayload, props) {
+  const payload = (typeof _payload === 'function') ? _payload(props) : _payload;
+  const mergedPayload = (typeof _mergedPayload === 'function') ? _mergedPayload(props) : _mergedPayload;
   return [
     path,
     merge({}, payload, {
@@ -14,7 +16,7 @@ export function mergePayload(path, payload = {}, mergedPayload) {
   ]
 }
 
-export function translatePayload(config) {
+export function translatePayload(config, props) {
   if (typeof config === 'string') {
     return [
       config,
@@ -22,7 +24,7 @@ export function translatePayload(config) {
     ];
   }
   const [path, payload] = translatePayload(config.path);
-  return mergePayload(path, payload, config.payload);
+  return mergePayload(path, payload, config.payload, props);
 }
 
 export default function pageStateMethod(config = {}, { callback } = {}) {
@@ -56,7 +58,7 @@ export default function pageStateMethod(config = {}, { callback } = {}) {
           if (!isEmpty(loadingConfigs)) {
             loadingConfigs.forEach(loadingConfig => {
               // run loading
-              args = translatePayload(loadingConfig);
+              args = translatePayload(loadingConfig, this.props);
               this.props.setPageState(...args);
             });
           }
@@ -68,7 +70,7 @@ export default function pageStateMethod(config = {}, { callback } = {}) {
             if (!isEmpty(successConfigs)) {
               successConfigs.forEach(successConfig => {
                 // run success callback
-                args = translatePayload(successConfig);
+                args = translatePayload(successConfig, this.props);
                 this.props.setPageState(...mergePayload(...args, {
                   result,
                 }));
@@ -82,7 +84,7 @@ export default function pageStateMethod(config = {}, { callback } = {}) {
             if (!isEmpty(errorConfigs)) {
               // handled error
               errorConfigs.forEach(errorConfig => {
-                args = translatePayload(errorConfig); // run error
+                args = translatePayload(errorConfig, this.props); // run error
 
                 this.props.setPageState(
                   ...mergePayload(...args, {

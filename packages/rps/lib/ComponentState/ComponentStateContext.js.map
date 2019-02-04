@@ -1,0 +1,1 @@
+{"version":3,"file":"ComponentStateContext.js","sourceRoot":"","sources":["../../src/ComponentState/ComponentStateContext.tsx"],"names":[],"mappings":";;;AAAA,yDAA2D;AAG9C,QAAA,YAAY,GAAwB;IAC/C,SAAS,EAAE,KAAK;IAChB,YAAY,EAAE,CAAC;IACf,OAAO,EAAE,KAAK;IACd,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,IAAI;CACb,CAAC;AAEa,QAAA,QAAQ,IAAV,KAAyB,kBAAkB,CAAwB,oBAAY,CAAC,gBAApE,QAAA,QAAQ,eAA6D"}

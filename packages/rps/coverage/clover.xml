@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1544086200219" clover="3.2.0">
+  <project timestamp="1544086200220" name="All files">
+    <metrics statements="174" coveredstatements="142" conditionals="61" coveredconditionals="33" methods="45" coveredmethods="34" elements="280" coveredelements="209" complexity="0" loc="174" ncloc="174" packages="6" files="10" classes="10">
+      <package name="ComponentState">
+        <metrics statements="29" coveredstatements="19" conditionals="10" coveredconditionals="2" methods="9" coveredmethods="4"/>
+        <file name="ComponentStateContext.tsx" path="/Users/jackywijaya/Documents/work/packages/rps/packages/rps/src/ComponentState/ComponentStateContext.tsx">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="4" count="2" type="stmt"/>
+          <line num="12" count="2" type="stmt"/>
+        </file>
+        <file name="ComponentStateProvider.tsx" path="/Users/jackywijaya/Documents/work/packages/rps/packages/rps/src/ComponentState/ComponentStateProvider.tsx">
+          <metrics statements="26" coveredstatements="16" conditionals="10" coveredconditionals="2" methods="9" coveredmethods="4"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="3" count="2" type="stmt"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="7" count="8" type="stmt"/>
+          <line num="8" count="8" type="stmt"/>
+          <line num="11" count="8" type="cond" truecount="2" falsecount="0"/>
+          <line num="12" count="8" type="stmt"/>
+          <line num="15" count="2" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="19" count="2" type="stmt"/>
+          <line num="20" count="9" type="stmt"/>
+          <line num="23" count="8" type="stmt"/>
+          <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="32" count="8" type="stmt"/>
+          <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="42" count="8" type="stmt"/>
+          <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="45" count="0" type="stmt"/>
+          <line num="50" count="2" type="stmt"/>
+          <line num="51" count="9" type="stmt"/>
+          <line num="58" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="ComponentState.hoc">
+        <metrics statements="18" coveredstatements="17" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="6"/>
+        <file name="componentStateMethod.ts" path="/Users/jackywijaya/Documents/work/packages/rps/packages/rps/src/ComponentState/hoc/componentStateMethod.ts">
+          <metrics statements="18" coveredstatements="17" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="6"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="12" type="stmt"/>
+          <line num="6" count="12" type="stmt"/>
+          <line num="7" count="14" type="stmt"/>
+          <line num="8" count="14" type="stmt"/>
+          <line num="9" count="14" type="cond" truecount="1" falsecount="1"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="12" count="14" type="stmt"/>
+          <line num="13" count="14" type="stmt"/>
+          <line num="14" count="14" type="stmt"/>
+          <line num="16" count="11" type="stmt"/>
+          <line num="17" count="11" type="stmt"/>
+          <line num="18" count="11" type="stmt"/>
+          <line num="21" count="3" type="stmt"/>
+          <line num="22" count="3" type="stmt"/>
+          <line num="23" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="PageState">
+        <metrics statements="43" coveredstatements="33" conditionals="11" coveredconditionals="6" methods="11" coveredmethods="6"/>
+        <file name="PageStateConsumer.tsx" path="/Users/jackywijaya/Documents/work/packages/rps/packages/rps/src/PageState/PageStateConsumer.tsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+        </file>
+        <file name="PageStateContext.tsx" path="/Users/jackywijaya/Documents/work/packages/rps/packages/rps/src/PageState/PageStateContext.tsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="4" count="2" type="stmt"/>
+        </file>
+        <file name="PageStateProvider.tsx" path="/Users/jackywijaya/Documents/work/packages/rps/packages/rps/src/PageState/PageStateProvider.tsx">
+          <metrics statements="39" coveredstatements="29" conditionals="11" coveredconditionals="6" methods="11" coveredmethods="6"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="3" count="2" type="stmt"/>
+          <line num="4" count="2" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="8" count="2" type="stmt"/>
+          <line num="9" count="2" type="stmt"/>
+          <line num="13" count="8" type="cond" truecount="3" falsecount="0"/>
+          <line num="14" count="2" type="stmt"/>
+          <line num="18" count="8" type="stmt"/>
+          <line num="19" count="8" type="stmt"/>
+          <line num="21" count="2" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="25" count="8" type="stmt"/>
+          <line num="26" count="4" type="cond" truecount="1" falsecount="1"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="32" count="8" type="stmt"/>
+          <line num="33" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="40" count="8" type="stmt"/>
+          <line num="41" count="9" type="stmt"/>
+          <line num="42" count="9" type="stmt"/>
+          <line num="43" count="9" type="stmt"/>
+          <line num="46" count="8" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="48" count="0" type="stmt"/>
+          <line num="51" count="8" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="53" count="0" type="stmt"/>
+          <line num="54" count="0" type="stmt"/>
+          <line num="57" count="2" type="stmt"/>
+          <line num="58" count="9" type="stmt"/>
+          <line num="65" count="9" type="stmt"/>
+          <line num="66" count="9" type="stmt"/>
+          <line num="67" count="9" type="stmt"/>
+          <line num="73" count="10" type="cond" truecount="2" falsecount="0"/>
+          <line num="74" count="1" type="stmt"/>
+          <line num="82" count="9" type="stmt"/>
+          <line num="89" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="PageState.Handler">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <file name="index.tsx" path="/Users/jackywijaya/Documents/work/packages/rps/packages/rps/src/PageState/Handler/index.tsx">
+          <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="9" count="3" type="stmt"/>
+          <line num="10" count="3" type="cond" truecount="2" falsecount="0"/>
+          <line num="11" count="2" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="16" count="3" type="stmt"/>
+          <line num="20" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="PageState.hoc">
+        <metrics statements="63" coveredstatements="61" conditionals="26" coveredconditionals="21" methods="15" coveredmethods="15"/>
+        <file name="pageState.tsx" path="/Users/jackywijaya/Documents/work/packages/rps/packages/rps/src/PageState/hoc/pageState.tsx">
+          <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="4" count="2" type="stmt"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="6" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+        </file>
+        <file name="pageStateMethod.tsx" path="/Users/jackywijaya/Documents/work/packages/rps/packages/rps/src/PageState/hoc/pageStateMethod.tsx">
+          <metrics statements="56" coveredstatements="54" conditionals="24" coveredconditionals="19" methods="13" coveredmethods="13"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="9" count="1" type="cond" truecount="2" falsecount="0"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="17" count="15" type="cond" truecount="1" falsecount="1"/>
+          <line num="18" count="15" type="cond" truecount="1" falsecount="1"/>
+          <line num="19" count="15" type="cond" truecount="2" falsecount="0"/>
+          <line num="20" count="15" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="29" count="18" type="cond" truecount="2" falsecount="0"/>
+          <line num="30" count="13" type="stmt"/>
+          <line num="32" count="5" type="stmt"/>
+          <line num="33" count="5" type="stmt"/>
+          <line num="36" count="13" type="cond" truecount="2" falsecount="0"/>
+          <line num="37" count="12" type="stmt"/>
+          <line num="38" count="12" type="stmt"/>
+          <line num="39" count="12" type="stmt"/>
+          <line num="40" count="12" type="stmt"/>
+          <line num="41" count="15" type="stmt"/>
+          <line num="42" count="15" type="stmt"/>
+          <line num="43" count="15" type="cond" truecount="1" falsecount="1"/>
+          <line num="44" count="15" type="stmt"/>
+          <line num="46" count="15" type="stmt"/>
+          <line num="47" count="15" type="stmt"/>
+          <line num="48" count="15" type="stmt"/>
+          <line num="49" count="15" type="stmt"/>
+          <line num="50" count="15" type="stmt"/>
+          <line num="51" count="15" type="stmt"/>
+          <line num="52" count="14" type="stmt"/>
+          <line num="53" count="14" type="stmt"/>
+          <line num="54" count="14" type="stmt"/>
+          <line num="55" count="14" type="cond" truecount="3" falsecount="1"/>
+          <line num="57" count="0" type="stmt"/>
+          <line num="60" count="14" type="stmt"/>
+          <line num="62" count="14" type="cond" truecount="2" falsecount="0"/>
+          <line num="64" count="1" type="stmt"/>
+          <line num="65" count="1" type="stmt"/>
+          <line num="67" count="14" type="stmt"/>
+          <line num="69" count="11" type="stmt"/>
+          <line num="70" count="11" type="cond" truecount="2" falsecount="0"/>
+          <line num="71" count="7" type="stmt"/>
+          <line num="72" count="7" type="stmt"/>
+          <line num="83" count="11" type="stmt"/>
+          <line num="86" count="3" type="stmt"/>
+          <line num="87" count="3" type="cond" truecount="1" falsecount="1"/>
+          <line num="88" count="3" type="stmt"/>
+          <line num="89" count="3" type="stmt"/>
+          <line num="90" count="3" type="stmt"/>
+          <line num="96" count="2" type="stmt"/>
+          <line num="101" count="3" type="stmt"/>
+          <line num="103" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="utils">
+        <metrics statements="14" coveredstatements="5" conditionals="10" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <file name="makeClassMemberDecorator.ts" path="/Users/jackywijaya/Documents/work/packages/rps/packages/rps/src/utils/makeClassMemberDecorator.ts">
+          <metrics statements="14" coveredstatements="5" conditionals="10" coveredconditionals="1" methods="3" coveredmethods="2"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="16" count="24" type="stmt"/>
+          <line num="17" count="24" type="stmt"/>
+          <line num="18" count="24" type="cond" truecount="1" falsecount="1"/>
+          <line num="19" count="24" type="stmt"/>
+          <line num="28" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="49" count="0" type="stmt"/>
+          <line num="54" count="0" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

@@ -635,10 +635,6 @@ react-native-snackbar-component@^1.0.8:
   dependencies:
     prop-types "^15.6.0"
 
-react-native-web-modal@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-web-modal/-/react-native-web-modal-1.0.1.tgz#d0e1d5fa020c88edb9258409054bec73a7726ea1"
-
 react-navigation@^1.5.8:
   version "1.5.12"
   resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-1.5.12.tgz#e226b4906c76dde55ddf7cc0a62ea04c77140d8a"

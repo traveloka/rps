@@ -1,6 +1,6 @@
 {
   "name": "@example/web",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "main": "index.js",
   "author": "Ryan Nixon Salim",
   "private": true,
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "@example/shared": "^1.2.0",
+    "@example/shared": "^1.2.1",
     "babel-loader": "^8.0.0",
     "react": "16.5.1",
     "react-art": "16.5.1",

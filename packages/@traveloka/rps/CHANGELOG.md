@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/traveloka/rps/compare/v1.2.0...v1.2.1) (2019-04-11)
+
+
+### Bug Fixes
+
+* prevent component to rerender when payload is not changed ([fce7ebe](https://github.com/traveloka/rps/commit/fce7ebe))
+
+
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/traveloka/rps/compare/v1.1.3...v1.2.0) (2018-08-24)
 

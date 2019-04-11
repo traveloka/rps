@@ -1,6 +1,6 @@
 {
   "name": "apps",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "devDependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
@@ -19,8 +19,8 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@example/shared": "^1.2.0",
-    "@traveloka/rps": "^1.2.0",
+    "@example/shared": "^1.2.1",
+    "@traveloka/rps": "^1.2.1",
     "concurrently": "^3.6.0",
     "haul": "^1.0.0-rc.5",
     "react": "16.3.1",

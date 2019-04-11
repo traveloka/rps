@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import isEqual from 'lodash/isEqual';
 
-function HandlerComponent({ payload, component: Component }) {
-  if (Component) {
-    return <Component {...payload} />;
+class HandlerComponent extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return !isEqual(this.props, nextProps);
   }
-  return null;
+
+  render() {
+    const { payload, component: Component } = this.props;
+    if (Component) {
+      return <Component {...payload} />;
+    }
+    return null;
+  }
 }
 
 HandlerComponent.propTypes = {
